@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<h1>
+  <%= @board.title %>
+</h1>
+<tr>
+  <td><%= link_to 'Edit board', edit_board_path(@board) %></td> ||
+  <td><%= link_to 'Destroy', @board, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+</tr>
+
+<div class="mt-4">
+  <%= tag.div id: :lists, data: { columns: @columns.to_json(include: :cards), board: @board } %>
+</div>
