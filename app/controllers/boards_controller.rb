@@ -46,7 +46,7 @@ class BoardsController < ApplicationController
   def destroy
     @board.destroy
     respond_to do |format|
-      format.html { redirect_to root_path, notice: 'No HTML allowed' }
+      format.html { redirect_to root_path, notice: 'Board successfully removed' }
       format.json { head :no_content }
     end
   end

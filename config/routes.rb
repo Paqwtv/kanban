@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   # secret url for handle boards
   # these routes are excluded from routing, because this functionality is not in the technical task
 
-  get 'secret/boards', to: 'boards#index'
-  delete 'secret/boards', to: 'boards#destroy'
+  scope '/secret' do
+    resources :boards, only: [:index, :destroy], param: :uid
+  end
 
   resources :boards, except: [:index, :new, :destroy], param: :uid do
     resources :columns, shallow: true do
