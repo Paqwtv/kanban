@@ -21,7 +21,7 @@ class ColumnsController < ApplicationController
 
     respond_to do |format|
       if @column.save
-        format.html { redirect_to @column, notice: 'Column was successfully created.' }
+        format.html { redirect_to root_path, notice: 'No HTML allowed for ths path' }
         format.json { render :show, status: :created, location: @column }
       else
         format.html { render :new }
@@ -33,10 +33,10 @@ class ColumnsController < ApplicationController
   def update
     respond_to do |format|
       if @column.update(column_params)
-        format.html { redirect_to @column, notice: 'Column was successfully updated.' }
+        format.html { redirect_to root_path, notice: 'No HTML allowed for ths path' }
         format.json { render :show, status: :ok, location: @column }
       else
-        format.html { render :edit }
+        format.html { redirect_to root_path, notice: 'No HTML allowed for ths path' }
         format.json { render json: @column.errors, status: :unprocessable_entity }
       end
     end
@@ -45,7 +45,7 @@ class ColumnsController < ApplicationController
   def destroy
     @column.destroy
     respond_to do |format|
-      format.html { redirect_to columns_url, notice: 'Column was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'No HTML allowed for ths path' }
       format.json { head :no_content }
     end
   end

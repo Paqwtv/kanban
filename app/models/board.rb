@@ -13,7 +13,7 @@ class Board < ApplicationRecord
   private
 
   def create_uid
-    self.uid = SecureRandom.base64(12)
+    self.uid = SecureRandom.hex(10)
   end
 
 end

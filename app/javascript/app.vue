@@ -1,10 +1,11 @@
 <template>
   <div class="container">
     <div class="board">
-      <column v-for="(column, index) in columns" :column="column"></column>
+      <column v-for="(column) in columns" :column="column"></column>
       <div class="list">
-        Create new card
+        New column
         <textarea v-model="message" class="form-control"></textarea>
+        <hr/>
         <button v-on:click="addColumn()" class="btn btn-primary">Add new column</button>
       </div>
     </div>
@@ -37,6 +38,7 @@
           data: data,
           dataType: "json",
           success: (data) => {
+            data.cards = []
             window.store.columns.push(data)
             this.message = ''
           }

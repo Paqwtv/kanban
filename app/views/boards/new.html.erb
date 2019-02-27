@@ -1,5 +1,17 @@
-<h1>New Board</h1>
+<p id="notice"><%= notice %></p>
 
-<%= render 'form', board: @board %>
 
-<%= link_to 'Back', boards_path %>
+<section id="cover">
+  <div id="cover-caption">
+    <div id="container" class="container">
+      <div class="row text-black">
+        <div class="col-sm-6 offset-sm-3 text-center">
+          <h1 class="display-4">New Board</h1>
+            <div class="info-form">
+              <%= render 'form', board: @board %>
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

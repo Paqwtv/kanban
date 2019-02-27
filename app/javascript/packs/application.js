@@ -26,6 +26,5 @@ document.addEventListener("turbolinks:load", function() {
       components: { App }
     })
   }
-
 });
 

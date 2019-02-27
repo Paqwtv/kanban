@@ -6,6 +6,7 @@ class BoardsController < ApplicationController
   end
 
   def show
+    return (redirect_to root_path, notice: 'Board not found' ) if @board.nil?
     @columns = @board.columns
   end
 
@@ -45,7 +46,7 @@ class BoardsController < ApplicationController
   def destroy
     @board.destroy
     respond_to do |format|
-      format.html { redirect_to boards_url, notice: 'Board was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: 'No HTML allowed' }
       format.json { head :no_content }
     end
   end
