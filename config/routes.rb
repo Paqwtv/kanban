@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   end
 
   delete 'boards/:uid', to: 'boards#destroy'
-  
+
   scope '/secret' do
     get 'boards', to: 'boards#index'
   end
